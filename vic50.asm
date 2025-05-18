@@ -2,7 +2,7 @@
 ; Converted from the Commodore PET version by David Given (original is CC0 licensed).
 ; Assemble with beebasm. sound.a2stream should be a 1-bit bitstream, MSB first.
 
-	org &fff		; VIC-20 program start at $1000 (vs $03ff for PET)
+	org &fff		; VIC-20 program start at $1000 (vs $03ff for PET) for 8k+ expanded: org $1201 8k+
 	equw &1001, _entry_string_end, 1
 	equb &9e, "4109", 0
 ._entry_string_end
