@@ -1,6 +1,6 @@
 ; An extremely shoddy 60kHz sound player for the Commodore VIC-20.
 ; Converted from the Commodore PET version by David Given (original is CC0 licensed).
-; Assemble with beebasm. sound.a2stream should be a 1-bit bitstream, MSB first.
+; Assemble with beebasm. zap60000.a2stream should be a 1-bit bitstream, MSB first.
 
 	org &fff		; VIC-20 program start at $1000 (vs $03ff for PET) for 8k+ expanded: org $1201 8k+
 	equw &1001, _entry_string_end, 1
@@ -29,7 +29,7 @@ TICKS = (CLOCK_RATE / SAMPLE_RATE) / 2
 .current_sample equb 0
 .bit_counter equb 0
 
-	org &1069		; Entry point in VIC-20 memory
+	org &4109		; Entry point in VIC-20 memory
 ._entry
 	sei
 
