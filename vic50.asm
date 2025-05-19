@@ -29,7 +29,7 @@ TICKS = (CLOCK_RATE / SAMPLE_RATE) / 2
 .current_sample equb 0
 .bit_counter equb 0
 
-	org &4109		; Entry point in VIC-20 memory
+	org &100d		; Entry point in VIC-20 memory
 ._entry
 	sei
 
