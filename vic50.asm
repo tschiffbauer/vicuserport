@@ -2,13 +2,13 @@
 ; Converted from the Commodore PET version by David Given (original is CC0 licensed).
 ; Assemble with beebasm. zap60000.a2stream should be a 1-bit bitstream, MSB first.
 
-	org &fff		; VIC-20 program start at $1000 (vs $03ff for PET) for 8k+ expanded: org $1201 8k+
-	equw &1001, _entry_string_end, 1
-	equb &9e, "4109", 0
+	org &11ff		
+	equw &1201, _entry_string_end, 1
+	equb &9e, "4621", 0
 ._entry_string_end
 	equw 0
 
-; VIC-20 VIA addresses (different from PET)
+; VIC-20 VIA addresses
 VIA_T1C_L = &9114	; Timer 1 counter low (was $e844 on PET)
 VIA_T1C_H = &9115	; Timer 1 counter high (was $e845)
 VIA_T1L_L = &9124	; Timer 1 latch low (was $e846)
@@ -29,7 +29,7 @@ TICKS = (CLOCK_RATE / SAMPLE_RATE) / 2
 .current_sample equb 0
 .bit_counter equb 0
 
-	org &100d		; Entry point in VIC-20 memory
+	org &120d		; Entry point in VIC-20 memory
 ._entry
 	sei
 
@@ -73,4 +73,4 @@ TICKS = (CLOCK_RATE / SAMPLE_RATE) / 2
 
 ._end
 
-SAVE "vic20prog.prg", &fff, _end
+SAVE "vic20prog.prg", &11ff, _end
