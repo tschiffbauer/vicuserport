@@ -15,10 +15,10 @@ VIA_T1L_L = &9124	; Timer 1 latch low (was $e846)
 VIA_T1L_H = &9125	; Timer 1 latch high (was $e847)
 VIA_T2C_L = &9128	; Timer 2 counter low (was $e848)
 VIA_T2C_H = &9129	; Timer 2 counter high (was $e849)
-VIA_SR    = &912A	; Shift register (was $e84a)
-VIA_ACR   = &912b	; Auxiliary control register (was $e84b)
-VIA_PCR   = &912c	; Peripheral control register (was $e84c)
-VIA_IFR   = &912d	; Interrupt flag register (was $e84d)
+VIA_SR    = &911A	; Shift register (was $e84a)
+VIA_ACR   = &911b	; Auxiliary control register (was $e84b)
+VIA_PCR   = &911c	; Peripheral control register (was $e84c)
+VIA_IFR   = &911d	; Interrupt flag register (was $e84d)
 
 CLOCK_RATE = 1000000
 SAMPLE_RATE = 60000
@@ -32,7 +32,9 @@ TICKS = (CLOCK_RATE / SAMPLE_RATE) / 2
 	org &120d		; Entry point in VIC-20 memory
 ._entry
 	sei
-
+        lda #16
+	sta 37147
+	
 	lda #&14
 	sta VIA_ACR
 	lda #&ac
@@ -45,6 +47,8 @@ TICKS = (CLOCK_RATE / SAMPLE_RATE) / 2
 	sta sample_ptr+0
 	lda #hi(binary_data)
 	sta sample_ptr+1
+	
+
 
 	jmp loopentry
 
