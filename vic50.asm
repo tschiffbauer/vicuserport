@@ -31,10 +31,7 @@ TICKS = (CLOCK_RATE / SAMPLE_RATE) / 2
 
 	org &120d		; Entry point in VIC-20 memory
 ._entry
-	sei
-        lda #16
-	sta 37147
-	
+	sei	
 	lda #&14
 	sta VIA_ACR
 	lda #&ac
