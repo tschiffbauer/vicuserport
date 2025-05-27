@@ -8,13 +8,12 @@
 ._entry_string_end
 	equw 0
 
-; VIC-20 VIA addresses
 VIA_T1C_L = &9114	; Timer 1 counter low (was $e844 on PET)
 VIA_T1C_H = &9115	; Timer 1 counter high (was $e845)
-VIA_T1L_L = &9124	; Timer 1 latch low (was $e846)
-VIA_T1L_H = &9125	; Timer 1 latch high (was $e847)
-VIA_T2C_L = &9128	; Timer 2 counter low (was $e848)
-VIA_T2C_H = &9129	; Timer 2 counter high (was $e849)
+VIA_T1L_L = &9000	; Timer 1 latch low (was $e846)
+VIA_T1L_H = &900f	; Timer 1 latch high (was $e847)
+VIA_T2C_L = &9118	; Timer 2 counter low (was $e848)
+VIA_T2C_H = &9119	; Timer 2 counter high (was $e849)
 VIA_SR    = &911A	; Shift register (was $e84a)
 VIA_ACR   = &911b	; Auxiliary control register (was $e84b)
 VIA_PCR   = &911c	; Peripheral control register (was $e84c)
@@ -31,7 +30,9 @@ TICKS = (CLOCK_RATE / SAMPLE_RATE) / 2
 
 	org &120d		; Entry point in VIC-20 memory
 ._entry
-	sei	
+	sei
+
+	
 	lda #&14
 	sta VIA_ACR
 	lda #&ac
@@ -70,8 +71,8 @@ TICKS = (CLOCK_RATE / SAMPLE_RATE) / 2
 	jmp loop
 
 .binary_data:
-	incbin "zap60000.a2stream"
+	incbin "sound_short.a2stream"
 
 ._end
 
-SAVE "vic20prog.prg", &11ff, _end
+SAVE "vic20cdsound.prg", &11ff, _end
