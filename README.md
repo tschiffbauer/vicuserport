@@ -1,4 +1,4 @@
-## Unleashing 60kHz Digital Audio on the expanded Commodore VIC-20! 🤘
+## 60kHz Digital Audio on the expanded Commodore VIC-20! 🤘
 
 This is my version of a 60kHz digital sound player from the Commodore PET to my old Commodore VIC-20.
 
