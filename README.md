@@ -29,6 +29,8 @@ This port is less about translating code line-for-line and more about channeling
 
 It's alive! It's playing! It's a glorious work in progress. While it's not quite concert-hall quality (it's 1-bit, after all!), it's a fantastic demonstration of what you can squeeze out of this old beast. Future updates might include even more shenanigans, who knows?  I really need to work on this more so that it doesn't play garbage after the sample is done playing.  Now it does loop, so hey, close your ears for a few :)
 
+[![The VIC-20 Can Do That?! 60kHz Digital Audio from the User Port!](https://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)](https://www.youtube.com/watch?v=yz4WnrCbzFM)
+
 **Repository Goodies:**
 
 * `vic20cdaudio.asm`: The star of the show! 
