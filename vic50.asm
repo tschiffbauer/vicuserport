@@ -1,4 +1,4 @@
-; An extremely shoddy 60kHz sound player for the Commodore VIC-20.
+; An extremely shoddy 60kHz sound player for the Commodore VIC-20 by Tony Schiffbauer
 ; Converted from the Commodore PET version by David Given (original is CC0 licensed).
 ; Assemble with beebasm. sound_short.a2stream should be a 1-bit bitstream, MSB first.
 
@@ -11,7 +11,7 @@
 VIA_T1C_L = &9114	; Timer 1 counter low (was $e844 on PET)
 VIA_T1C_H = &9115	; Timer 1 counter high (was $e845)
 VIA_T1L_L = &9000	; Timer 1 latch low (was $e846)
-VIA_T1L_H = &900f	; Timer 1 latch high (was $e847)
+VIA_T1L_H = &9009	; Timer 1 latch high (was $e847)
 VIA_T2C_L = &9118	; Timer 2 counter low (was $e848)
 VIA_T2C_H = &9119	; Timer 2 counter high (was $e849)
 VIA_SR    = &911A	; Shift register (was $e84a)
